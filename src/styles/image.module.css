@@ -1,12 +1,14 @@
-.contenedor{
-    width: 500px;
-    height: 500px;
+.contenedorImg{
+    width: 50%;
+    height: 50%;
+
     position: relative;
 }
 .imagen{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 400;
 }
 .chiste{
     font-family: fantasy;
