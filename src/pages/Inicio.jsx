@@ -1,27 +1,24 @@
 import "../styles/inicio.css";
-
 import { useEffect, useState } from "react";
-import {
-  Modal,
-  Button,
-  ButtonToolbar,
-  Checkbox,
-  CheckboxGroup,
-  FlexboxGrid,
-} from "rsuite";
-import { gatoAndChiste } from "../utils/gatos";
+import { Modal, Button, Checkbox, CheckboxGroup, FlexboxGrid } from "rsuite";
+import { gatoAndChiste } from "../utils/recibirGatoAndChiste";
 import Gato from "../components/Gato";
+import Header from "../components/header";
+import Footer from "../components/Footer";
 
 export default function Inicio() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const [categoria, setCategoria] = useState();
+  const [filtros, setFiltros] = useState();
+  const handleOpen = () => {
+    setCategoria(undefined);
+    setFiltros(undefined);
+    setOpen(true);
+  };
   const handleClose = () => setOpen(false);
 
   const [gato, setGato] = useState();
   const [chiste, setChiste] = useState(null);
-
-  const [categoria, setCategoria] = useState();
-  const [filtros, setFiltros] = useState();
 
   const handleCategoriachange = (event) => {
     setCategoria(event);
@@ -35,32 +32,17 @@ export default function Inicio() {
 
   return (
     <div className="container">
-      <header>
-        <h1 className="titulo">CatsAndJokes</h1>
-        <ButtonToolbar>
-          <i onClick={handleOpen} className="bx bxs-brightness"></i>
-        </ButtonToolbar>
-      </header>
+      <Header handleOpen={handleOpen} />
       <main className="main">
         <Gato gato={gato} chiste={chiste} />
         <button
-          className="newGatoAndJoke"
+          className="boton-chiste"
           onClick={() => gatoAndChiste(setGato, setChiste, categoria, filtros)}
         >
           Hazme un chiste
         </button>
-        {/* <DownloadImageButton imageUrl="#" imageName="#" /> */}
       </main>
-      <footer>
-        <a href="https://github.com/TJMolina/CatsAndJokes">
-          <i className="bx bxl-github"></i>
-        </a>
-        <img
-          className="ap"
-          src="https://campusvirtual.ing.unlpam.edu.ar/pluginfile.php/37478/coursecat/description/FONDO%20JPG-%20sin%20espacios.png"
-          alt="ArgentinaPrograma"
-        />
-      </footer>
+      <Footer />
       <Modal open={open} onClose={handleClose} size="xs">
         <Modal.Header>
           <Modal.Title>Filtro de bromas</Modal.Title>
