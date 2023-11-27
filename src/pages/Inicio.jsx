@@ -1,4 +1,7 @@
 import "../styles/inicio.css";
+import CopyButton from "../components/CopyButton";
+import DownloadImageButton from "../components/DownloadImageButton";
+
 import { useEffect, useState } from "react";
 import {
   Modal,
@@ -49,6 +52,10 @@ export default function Inicio() {
         >
           Hazme un chiste
         </button>
+      
+        <CopyButton textToCopy="Texto a copiar" />
+        <DownloadImageButton imageUrl="#" imageName="#" />
+
       </main>
       <footer>
         <a href="https://github.com/TJMolina/CatsAndJokes">

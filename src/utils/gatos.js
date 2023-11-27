@@ -1,12 +1,10 @@
-const recibirChiste = async (categoria, filtros) => {
-    let consulta = categoria?`${categoria}?`:'Any?';
-    consulta += filtros? `blacklistFlags=${filtros}&`:'';
-    const respuestaFetch = await fetch(`https://v2.jokeapi.dev/joke/${consulta}format=txt`);
+const recibirChiste = async () => {
+    const respuestaFetch = await fetch('https://v2.jokeapi.dev/joke/Any?format=txt');
     return await respuestaFetch.text();
 }
-export const gatoAndChiste = async (setGato, setChiste, categoria, filtros) => {
+export const gatoAndChiste = async (setGato, setChiste) => {
     setGato(`https://cataas.com/cat?timestamp=${new Date().getTime()}`);
-    const chiste = await recibirChiste(categoria, filtros);
+    const chiste = await recibirChiste();
     setChiste(chiste);
     return;
     const res = await fetch("https://translate.terraprint.co/translate", {
