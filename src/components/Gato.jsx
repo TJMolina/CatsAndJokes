@@ -17,7 +17,6 @@ export default function Gato({ gato, chiste }) {
         {chiste}
       </p>
       <div id="herramientas" className={style.herramientas}>
-        <ButtonGroup vertical>
           <IconButton
             size="xs"
             icon={<CopyIcon />}
@@ -27,12 +26,6 @@ export default function Gato({ gato, chiste }) {
               )
             }
           />
-          <IconButton
-            size="xs"
-            icon={<FileDownloadIcon />}
-            onClick={handleDownloadClick}
-          />
-        </ButtonGroup>
       </div>
     </div>
   );
