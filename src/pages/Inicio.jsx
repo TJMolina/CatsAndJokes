@@ -1,6 +1,4 @@
 import "../styles/inicio.css";
-import CopyButton from "../components/CopyButton";
-import DownloadImageButton from "../components/DownloadImageButton";
 
 import { useEffect, useState } from "react";
 import {
@@ -9,7 +7,6 @@ import {
   ButtonToolbar,
   Checkbox,
   CheckboxGroup,
-  Divider,
   FlexboxGrid,
 } from "rsuite";
 import { gatoAndChiste } from "../utils/gatos";
@@ -26,12 +23,12 @@ export default function Inicio() {
   const [categoria, setCategoria] = useState();
   const [filtros, setFiltros] = useState();
 
-  const handleCategoriachange = (event)=>{
+  const handleCategoriachange = (event) => {
     setCategoria(event);
-  }
-  const handleFiltrochange = (event)=>{
+  };
+  const handleFiltrochange = (event) => {
     setFiltros(event);
-  }
+  };
   useEffect(() => {
     gatoAndChiste(setGato, setChiste, categoria, filtros);
   }, []);
@@ -52,10 +49,7 @@ export default function Inicio() {
         >
           Hazme un chiste
         </button>
-      
-        <CopyButton textToCopy="Texto a copiar" />
-        <DownloadImageButton imageUrl="#" imageName="#" />
-
+        {/* <DownloadImageButton imageUrl="#" imageName="#" /> */}
       </main>
       <footer>
         <a href="https://github.com/TJMolina/CatsAndJokes">
@@ -67,40 +61,47 @@ export default function Inicio() {
           alt="ArgentinaPrograma"
         />
       </footer>
-      <Modal open={open} onClose={handleClose} size='xs'>
+      <Modal open={open} onClose={handleClose} size="xs">
         <Modal.Header>
           <Modal.Title>Filtro de bromas</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <div className="show-grid">
-              <FlexboxGrid justify="space-around">
-                <FlexboxGrid.Item colspan={6}>
-                  <CheckboxGroup name="categoria" onChange={handleCategoriachange}>
-                    <p>Categoria</p>
-                    <Checkbox value="Programming">Programacion</Checkbox>
-                    <Checkbox value="Miscellaneous">Miscellaneous</Checkbox>
-                    <Checkbox value="Dark">Dark</Checkbox>
-                  </CheckboxGroup>
-                </FlexboxGrid.Item>
+          <div className="show-grid">
+            <FlexboxGrid justify="space-around">
+              <FlexboxGrid.Item colspan={6}>
+                <CheckboxGroup
+                  name="categoria"
+                  onChange={handleCategoriachange}
+                >
+                  <p>Categoria</p>
+                  <Checkbox value="Programming">Programacion</Checkbox>
+                  <Checkbox value="Miscellaneous">Miscellaneous</Checkbox>
+                  <Checkbox value="Dark">Dark</Checkbox>
+                </CheckboxGroup>
+              </FlexboxGrid.Item>
 
-                <FlexboxGrid.Item colspan={6}>
-                  <CheckboxGroup name="filtro" onChange={handleFiltrochange}>
-                    <p>Temas prohibidos</p>
-                    <Checkbox value="nsfw">
-                      NSFW
-                    </Checkbox>
-                    <Checkbox value="religious">Religion</Checkbox>
-                    <Checkbox value="political">Politica</Checkbox>
-                    <Checkbox value="racist">Racismo</Checkbox>
-                    <Checkbox value="sexist">Sexista</Checkbox>
-                    <Checkbox value="explicit">Explicito</Checkbox>
-                  </CheckboxGroup>
-                </FlexboxGrid.Item>
-              </FlexboxGrid>
-            </div>
+              <FlexboxGrid.Item colspan={6}>
+                <CheckboxGroup name="filtro" onChange={handleFiltrochange}>
+                  <p>Temas prohibidos</p>
+                  <Checkbox value="nsfw">NSFW</Checkbox>
+                  <Checkbox value="religious">Religion</Checkbox>
+                  <Checkbox value="political">Politica</Checkbox>
+                  <Checkbox value="racist">Racismo</Checkbox>
+                  <Checkbox value="sexist">Sexista</Checkbox>
+                  <Checkbox value="explicit">Explicito</Checkbox>
+                </CheckboxGroup>
+              </FlexboxGrid.Item>
+            </FlexboxGrid>
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={()=>{handleClose();gatoAndChiste(setGato, setChiste, categoria, filtros);}} appearance="primary">
+          <Button
+            onClick={() => {
+              handleClose();
+              gatoAndChiste(setGato, setChiste, categoria, filtros);
+            }}
+            appearance="primary"
+          >
             Hazme un chiste
           </Button>
         </Modal.Footer>

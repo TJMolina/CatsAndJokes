@@ -1,9 +1,8 @@
-.contenedorImg{
-    display: flex;
-    flex-direction: column;
+.contenedorChiste{
+    height: 80%;
     position: relative;
-    max-height: 80%;
-    font-size: 1rem;
+    display: flex;
+    justify-content: center;
 }
 .imagen{
     height: 100%;
@@ -12,10 +11,15 @@
 }
 .chiste{
     font-family: fantasy;
-    /* font-size: 2rem; */
     font-weight: 500;
     position: absolute;
     color: white;
     bottom: 0;
     -webkit-text-stroke: 1px black;
+}
+
+.herramientas{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
