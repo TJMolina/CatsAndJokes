@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 * {
   box-sizing: border-box;
@@ -12,34 +13,41 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);
+  color: #f9e46e; 
 }
 
 .container {
-  background-color: blueviolet;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  margin: 0 auto;
 }
 
 header {
-  background-color: rgb(112, 0, 216);
-  padding: 5px 10px;
+  padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 header i {
-  color: rgb(255, 255, 255);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-right: 10px;
 }
 
 header h1 {
-  color: white;
-  font-size: 60px;
+  font-size: 3rem;
   margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.gatitos {
+  font-size: 2rem; 
+  margin-right: 10px; 
+  margin-left: 10px;
 }
 
 main {
@@ -47,41 +55,53 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px; 
+  padding: 20px;
 }
 
 .boton-chiste {
-  font-size: 1.5rem;
-  padding: 10px;
-  background-color: rgb(112, 0, 216); /* Color de fondo */
-  color: rgb(0, 0, 0); /* Color del texto */
-  margin-top: auto;
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 1.6rem;
+  padding: 8px 15px; 
+  background: linear-gradient(45deg, rgba(103, 58, 183, 0.8), rgba(103, 58, 183, 0.6));
+  color: #f9e46e;
+  margin-top: 20px;
+  cursor: pointer;
+  max-width: 250px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.boton-chiste:hover {
+  background-image: linear-gradient(45deg, rgba(39, 19, 73, 0.8), rgba(84, 47, 150, 0.6));  
 }
 
 footer {
-  padding: 5px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(112, 0, 216);
+  background: linear-gradient(45deg, rgba(103, 58, 183, 0.8), rgba(103, 58, 183, 0.6)); 
   align-items: center;
   margin-top: auto;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer a i {
-  font-size: 4rem;
-  color: black;
+  font-size: 2.8rem;
+  color: #000000;
+  margin-right: 10px;
 }
 
 footer img {
-  width: 200px;
-  height: 50px;
+  width: 120px;
+  height: 32px;
   object-fit: contain;
 }
 
 .newGatoAndJoke {
-  width: 500px;
-  height: 30px;
-  background-color: rgb(112, 0, 216);
-  color: white;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, rgba(103, 58, 183, 0.8), rgba(103, 58, 183, 0.6));
+  color: f9e46e;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
