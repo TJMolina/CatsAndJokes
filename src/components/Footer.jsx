@@ -5,7 +5,7 @@ export default function Footer() {
       <i className="bx bxl-github"></i> 
     </a>
     <p>
-      Tobias - Matias - Ulises - Santiago - Virginia
+      Tobias - Matias - Ulises - Virginia
     </p>
     <img
       className="ap"

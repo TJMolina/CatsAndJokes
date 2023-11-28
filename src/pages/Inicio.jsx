@@ -10,19 +10,21 @@ export default function Inicio() {
   const [open, setOpen] = useState(false);
   const [categoria, setCategoria] = useState();
   const [filtros, setFiltros] = useState();
+  const [gato, setGato] = useState();
+  const [chiste, setChiste] = useState(null);
+
   const handleOpen = () => {
     setCategoria(undefined);
     setFiltros(undefined);
     setOpen(true);
   };
-  const handleClose = () => setOpen(false);
 
-  const [gato, setGato] = useState();
-  const [chiste, setChiste] = useState(null);
+  const handleClose = () => setOpen(false);
 
   const handleCategoriachange = (event) => {
     setCategoria(event);
   };
+  
   const handleFiltrochange = (event) => {
     setFiltros(event);
   };
@@ -35,10 +37,7 @@ export default function Inicio() {
       <Header handleOpen={handleOpen} />
       <main className="main">
         <Gato gato={gato} chiste={chiste} />
-        <button
-          className="boton-chiste"
-          onClick={() => gatoAndChiste(setGato, setChiste, categoria, filtros)}
-        >
+        <button className="boton-chiste" onClick={() => gatoAndChiste(setGato, setChiste, categoria, filtros)}>
           Hazme un chiste
         </button>
       </main>
